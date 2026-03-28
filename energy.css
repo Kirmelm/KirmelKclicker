@@ -1,0 +1,29 @@
+.energy-container {
+    position: absolute;
+    bottom: 50px; /* Будет внизу экрана */
+    width: 300px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+#energy-bar {
+    width: 100%; /* Начинаем со 100% */
+    height: 100%;
+    background: linear-gradient(90deg, #ffeb3b, #f44336); /* Желто-красный градиент */
+    transition: width 0.2s ease; /* Плавное уменьшение */
+}
+
+.energy-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    pointer-events: none; /* Чтобы текст не мешал кликам */
+}

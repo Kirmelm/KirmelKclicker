@@ -1,0 +1,68 @@
+/* Обнуляем стандартные отступы браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;/*кароче типо для фулл экраной без рамок низ тоже самое */
+    height: 100%;
+    overflow: hidden; /* Убирает полосы прокрутки, если они появятся */
+}
+
+.background {
+    width: 100vw;  /* 100% ширины видимой  */
+    height: 100vh; /* 100% высоты видимой */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* градиент */
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 40%, #8e44ad 70%, #d33394 100%);
+    background-size: cover;
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+}
+
+/* Анимация перелива фона */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.circle-gradient-btn {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    
+
+/* Делаем стекло белее */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* анимация наведении */
+.circle-gradient-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* анимация наведения */
+.circle-gradient-btn:active {
+    transform: scale(0.95);
+}

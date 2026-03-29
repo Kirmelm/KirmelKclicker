@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>KirmelKclicker Ultra</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="energy.css">
+    <link rel="stylesheet" href="cjetjek.css">
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <div class="gradient-bg"></div>
+
+    <!-- Интерфейс -->
+    <div id="ui-layer">
+        <!-- Анимированный счетчик -->
+        <div id="score-container" class="pulse-animation">
+            Score: <span id="score">0</span>
+        </div>
+
+        <div id="nav">
+            <button class="menu-btn" onclick="showTab('shop')">МАГАЗИН</button>
+        </div>
+    </div>
+
+    <!-- Экран игры -->
+    <div id="game-tab" class="tab active">
+        <button id="click-btn">Clik me</button>
+    </div>
+
+    <!-- Экран магазина -->
+    <div id="shop-tab" class="tab">
+        <div class="glass-shop">
+            <h2>МАГАЗИН</h2>
+            <div class="shop-items">
+                <div class="item" onclick="buy('click')">Сила клика: <span id="p-click">10</span></div>
+                <div class="item" onclick="buy('auto')">Автоклик: <span id="p-auto">50</span></div>
+                <div class="item" onclick="buy('energy')">Макс. энергия: <span id="p-energy">100</span></div>
+            </div>
+            <!-- КНОПКА ВЫХОДА -->
+            <button class="close-btn" onclick="showTab('game')">НАЗАД В ИГРУ</button>
+            <br>
+            <button class="reset-btn" onclick="reset()">СБРОС</button>
+        </div>
+    </div>
+
+    <!-- Энергия -->
+    <div id="energy-section">
+        <div class="energy-text">Энергия: <span id="energy">100</span> / <span id="max-energy">100</span></div>
+        <div class="bar-bg"><div id="energy-bar"></div></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

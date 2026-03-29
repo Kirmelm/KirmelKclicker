@@ -1,0 +1,63 @@
+body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Arial', sans-serif; color: white; }
+
+/* Фон */
+.gradient-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+    background: linear-gradient(45deg, #1e3c72, #2a5298, #9b59b6, #4b6cb7);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+@keyframes gradientMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+/* Постоянная анимация очков */
+#score-container {
+    position: absolute; top: 40px; left: 40px; font-size: 3.5rem; font-weight: bold;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+.pulse-animation { animation: scorePulse 2s infinite ease-in-out; }
+@keyframes scorePulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; color: #f1c40f; }
+}
+
+/* Кнопка клика */
+.tab { height: 100vh; display: none; justify-content: center; align-items: center; }
+.tab.active { display: flex; }
+
+#click-btn {
+    width: 220px; height: 220px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.1); color: white; font-size: 1.5rem; cursor: pointer;
+    backdrop-filter: blur(10px); transition: 0.2s;
+}
+#click-btn:hover { transform: scale(1.1); background: rgba(255,255,255,0.2); }
+#click-btn:active { transform: scale(0.9); }
+
+/* Магазин */
+.glass-shop {
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 30px;
+    padding: 30px; width: 350px; text-align: center;
+}
+.item {
+    background: rgba(255,255,255,0.1); margin: 10px 0; padding: 15px;
+    border-radius: 15px; cursor: pointer; transition: 0.3s;
+}
+.item:hover { background: rgba(255,255,255,0.2); transform: translateX(5px); }
+
+.close-btn { margin-top: 20px; padding: 10px 20px; background: #27ae60; color: white; border: none; border-radius: 10px; cursor: pointer; width: 100%; }
+.reset-btn { margin-top: 10px; background: none; color: #ff7675; border: none; cursor: pointer; font-size: 0.8rem; }
+
+/* Энергия */
+#energy-section { position: absolute; bottom: 40px; left: 40px; width: 280px; }
+.bar-bg { width: 100%; height: 15px; background: rgba(0,0,0,0.3); border-radius: 10px; overflow: hidden; margin-top: 5px; }
+#energy-bar { height: 100%; background: linear-gradient(90deg, #f1c40f, #e67e22); width: 100%; transition: 0.3s; }
+
+#nav { position: absolute; top: 40px; right: 40px; }
+.menu-btn { background: rgba(255,255,255,0.1); border: 1px solid white; color: white; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
+
+/* Стили для мобильных устройств (ширина до 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

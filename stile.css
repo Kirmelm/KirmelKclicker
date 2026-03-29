@@ -1,0 +1,103 @@
+.score-container {
+    position: absolute;
+    top: 50px; /* Отступ сверху */
+    font-family: 'Arial', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    user-select: none; /* Чтобы текст нельзя было случайно выделить */
+}
+
+/* Эффект легкого покачивания цифр (по желанию) */
+#score {
+    display: inline-block;
+    transition: transform 0.1s;
+}
+
+/* Обнуляем стандартные отступы браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Убирает полосы прокрутки, если они появятся */
+}
+
+.background {
+    width: 100vw;  /* 100% ширины видимой части экрана */
+    height: 100vh; /* 100% высоты видимой части экрана */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Твой сочный градиент */
+    background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 40%, #8e44ad 70%, #d33394 100%);
+    background-size: cover;
+}
+
+/* Полностью обновляем фон */
+.background {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Ипользуем яркие HEX-коды для сочности */
+    /* 135deg — это направление из верхнего левого в нижний правый угол */
+    background: linear-gradient(135deg, 
+        #00d2ff 0%,   /* Ярко-голубой в самом начале */
+        #3a7bd5 40%,  /* Насыщенный синий в центре */
+        #8e44ad 70%,  /* Чистый фиолетовый */
+        #d33394 100%  /* Пурпурный в самом конце для контраста */
+    );
+    
+    /* Добавим эффект "дыхания" фону, чтобы он слегка переливался */
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+}
+
+/* Анимация перелива фона (по желанию) */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Кнопка, чтобы она не потерялась на ярком фоне */
+.circle-gradient-btn {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    /* Делаем "стекло" чуть белее, чтобы оно выделялось */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.circle-gradient-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.circle-gradient-btn:active {
+    transform: scale(0.95);
+}
+

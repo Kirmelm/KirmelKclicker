@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KirmelKCliker</title>
+    <link rel="stylesheet" href="stile.css"> 
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="cjetjek.css">
+    <link rel="stylesheet" href="energy.css">
+</head>
+<body>
+    <div class="score-container">
+        Score: <span id="score">0</span>
+    </div>
+
+    <div class="energy-container">
+        <div id="energy-bar"></div>
+        <div class="energy-text">Энергия: <span id="energy-num">100</span>%</div>
+    </div>
+
+    <div class="background">
+        <button class="circle-gradient-btn" id="click-btn">Clik me</button>
+    </div>
+
+    <button class="open-shop" onclick="toggleShop()">МАГАЗИН 🛒</button>
+
+    <!-- МЕНЮ МАГАЗИНА -->
+    <div id="shopMenu" class="shop-hidden">
+        <h2>УЛУЧШЕНИЯ</h2>
+        <div class="item">
+            <p>Клик +1 (Ур.<span id="cLvl">1</span>)</p>
+            <button onclick="buy('click')">Цена: <span id="cPrice">10</span></button>
+        </div>
+        <div class="item">
+            <p>Автоклик +1 (Ур.<span id="aLvl">0</span>)</p>
+            <button onclick="buy('auto')">Цена: <span id="aPrice">50</span></button>
+        </div>
+        <div class="item">
+            <p>Энергия +1 (Ур.<span id="eLvl">1</span>)</p>
+            <button onclick="buy('energy')">Цена: <span id="ePrice">30</span></button>
+        </div>
+        <button class="close-btn" onclick="toggleShop()">ЗАКРЫТЬ</button>
+    </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
